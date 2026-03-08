@@ -1,0 +1,12 @@
+[Unit]
+Description=GROBID Trainer Relay Server
+After=network.target
+
+[Service]
+ExecStart=/path/to/grobid-relay/.venv/bin/python /path/to/grobid-relay/relay_server.py --port 8080
+Restart=always
+RestartSec=5
+EnvironmentFile=/path/to/grobid-relay/.env
+
+[Install]
+WantedBy=multi-user.target
